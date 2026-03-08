@@ -11,7 +11,7 @@ const searchInput = document.getElementById("searchInput")
 let allIssues = []
 
 if(!localStorage.getItem("isLoggedIn")){
-window.location.href = "login.html"
+window.location.href = "main.html"
 }
 
 function showLoading() {
@@ -121,7 +121,9 @@ ${issue.description}
 #${issue.id} by ${issue.author}
 
 <div class="text-xs text-gray-400 mt-1">
-1/5/2024
+
+${new Date(issue.createdAt).toLocaleDateString()}
+</div>
 </div>
 
 </div>
@@ -210,9 +212,10 @@ async function openIssue(id) {
     document.getElementById("modalAuthor").innerText = issue.author
     document.getElementById("modalAuthor2").innerText = issue.author
 
-    document.getElementById("modalDate").innerText = issue.date
+    document.getElementById("modalDate").innerText = new Date(issue.created_at).toLocaleDateString()
 
-    document.getElementById("modalPriority").innerText = issue.priority
+    document.getElementById("modalPriority").innerText =
+issue.priority.toUpperCase()
 
     document.getElementById("modalStatus").innerText = issue.status
 
