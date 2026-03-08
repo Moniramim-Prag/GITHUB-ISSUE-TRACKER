@@ -1,140 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>GitHub Issues Tracker</title>
+
+<title>Login</title>
 </head>
 
-    <body class="bg-gray-100">
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
 
-<div class="container mx-auto py-10">
+<div class="card w-96 bg-white shadow-xl p-6 justify-center items-center space-y-10">
+<img src="./assets/github-logo.png">
+<h2 class="text-2xl font-bold text-center mb-2">Github Issues Tracker</h2>
 
-<!-- HEADER -->
-<div class="flex justify-between items-center mb-6">
+<p class="text-center text-gray-500 mb-4">
+Sign in to manage your issues
+</p>
 
-<h1 class="text-3xl font-bold flex items-center gap-2">
-<i class="fa-brands fa-github" style="color: rgb(177, 151, 252);"></i> GitHub Issues Tracker
-</h1>
+<form id="loginForm">
 
-<div class="flex gap-4">
-<input id="searchInput" type="text" placeholder="Search issues..." class="input input-bordered">
-<button class="btn btn-primary">+ New Issue</button>
+<input id="username" type="text" placeholder="Enter Username" class="input input-bordered w-full mb-3"
+/>
 
-</div>
+<input id="password" type="password" placeholder="Enter Password" class="input input-bordered w-full mb-3"
+/>
 
-</div>
+<button class="btn btn-primary w-full">Sign In</button>
 
-
-<!-- FILTER BUTTONS -->
-<div class="bg-white p-4 rounded-lg shadow flex gap-4 mb-6">
-
-<button id="allBtn" class="btn btn-primary">All</button>
-<button id="openBtn" class="btn btn-outline">Open</button>
-<button id="closedBtn" class="btn btn-outline">Closed</button>
-
-</div>
-
-
-<!-- ISSUE STATS -->
-<div class="bg-white p-6 rounded-lg shadow mb-6">
-
-<div class="flex justify-between">
-
-<div>
-<h2 id="issueCount" class="text-2xl font-bold">0 Issues</h2>
-<p class="text-gray-500">Track and manage project issues</p>
-</div>
-
-<div class="flex gap-6 text-sm">
-
-<span class="flex items-center gap-2">
-<span class="w-3 h-3 bg-green-500 rounded-full"></span>Open
-</span>
-
-<span class="flex items-center gap-2">
-<span class="w-3 h-3 bg-purple-500 rounded-full"></span>Closed
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- LOADING -->
-<div id="loadingSpinner" class="hidden flex justify-center py-10">
-<span class="loading loading-dots loading-lg"></span>
-</div>
-
-
-<!-- ISSUES GRID -->
-<div id="issuesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-
-</div>
-
-
-<!-- ISSUE MODAL -->
-<dialog id="issueModal" class="modal">
-<div class="modal-box max-w-3xl">
-
-<h2 id="modalTitle" class="text-3xl font-bold mb-2"></h2>
-
-<div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
-
-<span id="modalStatus" class="badge badge-success"></span>
-
-<span>• Opened by <span id="modalAuthor"></span></span>
-
-<span>• <span id="modalDate"></span></span>
-
-</div>
-
-<div class="flex gap-2 mb-4">
-
-<span class="badge badge-error badge-outline">BUG</span>
-<span class="badge badge-warning badge-outline">HELP WANTED</span>
-
-</div>
-
-<p id="modalDescription" class="text-gray-600 mb-6"></p>
-
-
-<div class="bg-gray-100 p-4 rounded-lg flex justify-between">
-
-<div>
-<p class="text-gray-500 text-sm">Assignee:</p>
-<p id="modalAuthor2" class="font-semibold"></p>
-</div>
-
-<div>
-<p class="text-gray-500 text-sm">Priority:</p>
-<span id="modalPriority" class="badge badge-error"></span>
-</div>
-
-</div>
-
-
-<div class="modal-action">
-
-<form method="dialog">
-<button class="btn btn-primary">Close</button>
 </form>
+<p class="font-bold">OR</p>
+
+<p class="text-gray-500">Demo Credentials:</p>
+
+<div class="mt-4 text-sm text-gray-500">
+
+<p>Username: <b>admin</b></p>
+<p>Password: <b>admin123</b></p>
 
 </div>
 
 </div>
-</dialog>
 
+<script src="login.js"></script>
 
-<script src="script.js"></script>
-
-</body>
-    <script src="./script.js"></script>
-    
 </body>
 </html>
