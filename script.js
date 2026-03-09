@@ -180,7 +180,7 @@ openBtn.onclick = () => {
 
     const openIssues = allIssues
         .filter(issue => issue.status.toUpperCase() === "OPEN")
-        .slice(0, 20)
+        .slice(0, 44)
 
     displayIssues(openIssues)
 
